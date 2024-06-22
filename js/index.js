@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const musicRequestCanvas = document.getElementById('musicRequestCanvas');
     const requestIframe = document.getElementById('requestIframe');
     const closeButton = document.getElementById('closeButton');
-    const defaultTitle = 'Radio La Mejor · 92.5';
+    const defaultTitle = 'Radio La Mejor · 91.5 FM';
     const defaultCover = 'https://radiolamejor.cl/img/default.jpg';
     let iframeLoaded = false;
     let userPaused = false;
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (isLive) {
-                var livename = 'Radio La Mejor 92.5 FM // Marchigue, Sexta Región de Chile';
+                var livename = 'Radio La Mejor 91.5 FM // Marchigue, Sexta Región de Chile';
                 var liveart = data.live.art || defaultCover;
                 var livetitle = `Radio La Mejor · ${livename}`
 
