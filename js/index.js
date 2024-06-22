@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (isLive) {
-                var livename = 'Radio La Mejor 91.5 FM // Marchigue, Sexta Región de Chile';
+                var livename = 'Radio La Mejor 91.5 FM // Marchigüe, VI Región // Chile';
                 var liveart = data.live.art || defaultCover;
                 var livetitle = `Radio La Mejor · ${livename}`
 
