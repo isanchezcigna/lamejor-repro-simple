@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (audio.paused) {
             playAudio();
             audio.setAttribute('title', document.getElementById('song').textContent);
-            audio.setAttribute('poster', document.getElementById('cover').src);
+            // audio.setAttribute('poster', document.getElementById('cover').src);
         }
     }
 
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 var livetitle = `Radio La Mejor · ${livename}`
 
                 song.textContent = livename; // setea el nombre del programa
-                cover.src = liveart; // setea la imagen del programa
+                // cover.src = liveart; // setea la imagen del programa
                 document.title = livetitle; // setea el titulo de la pagina
             } else {
                 if (data.now_playing && data.now_playing.song) {
