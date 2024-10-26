@@ -183,8 +183,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }, 3000);
 
-    setInterval(updateSongInfo, 30000);
-    updateSongInfo();
+    // setInterval(updateSongInfo, 30000);
+    // updateSongInfo();
 
     closeButton.addEventListener('click', () => {
         musicRequestCanvas.classList.remove('open');
