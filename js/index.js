@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let userPaused = false;
     let retryCount = 0;
 
+    if (window.location.protocol === "https:") {
+        window.location.protocol = "http";
+    }
+
     function setThemeByTime() {
         const hour = new Date().getHours();
         document.body.style.background = hour >= 6 && hour < 18
