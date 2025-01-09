@@ -1,3 +1,4 @@
+/* eslint-disable */
 document.addEventListener('DOMContentLoaded', function () {
     const audio = document.getElementById('audio');
     const playButton = document.getElementById('playButton');
@@ -14,17 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let iframeLoaded = false;
     let userPaused = false;
     let retryCount = 0;
-
-    if (window.location.protocol === "https:") {
-        window.location.protocol = "http";
-    }
-
-    function setThemeByTime() {
-        const hour = new Date().getHours();
-        document.body.style.background = hour >= 6 && hour < 18
-            ? 'linear-gradient(135deg, #f89200, #facc22)'
-            : 'linear-gradient(to bottom, rgba(2,7,29) 0%,rgb(8, 30, 77) 100%)';
-    }
 
     function changeMediaData(data) {
         if ('mediaSession' in navigator) {
@@ -50,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function playAudio() {
-        audio.src = 'https://radio.laurban.cl/listen/lamejor/media';
+        audio.src = 'https://azura.laurban.cl/listen/lamejor/media';
         audio.play().catch(error => console.error('Error al reproducir el audio:', error));
     }
 
@@ -63,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (audio.paused) {
             playAudio();
             audio.setAttribute('title', document.getElementById('song').textContent);
-            // audio.setAttribute('poster', document.getElementById('cover').src);
         }
     }
 
@@ -74,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateSongInfo() {
-        //setThemeByTime();
         getRadioData().then(data => {
             changeMediaData(data);
             console.log(data)
@@ -108,7 +96,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (isLive) {
                 var livename = 'Radio La Mejor 91.5 FM // Marchigüe, VI Región // Chile';
-                var liveart = data.live.art || defaultCover;
                 var livetitle = `Radio La Mejor · ${livename}`
 
                 song.textContent = livename; // setea el nombre del programa
@@ -123,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         ? `${songTitle} (feat. ${extraArtistsText})`
                         : songTitle;
                     const songText = `Escuchas: ${mainArtist} - ${songName}`;
-    
+
                     cover.src = art || defaultCover;
                     song.textContent = songText;
                     document.title = `Radio La Mejor · Reproduciendo: ${mainArtist} - ${songName}`;
@@ -135,22 +122,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.title = defaultTitle;
                 }
             }
-
-            
-
-            // const nextSong = document.getElementById('next-song');
-            // if (isLive) {
-            //     nextSong.textContent = '¡Estamos en vivo!';
-            // } else if (data.playing_next && data.playing_next.song) {
-            //     const { artist, title: nextTitle } = data.playing_next.song;
-            //     const [mainArtist, extraArtist] = artist.split(';').map(part => part.trim());
-            //     const nextSongName = extraArtist && !nextTitle.includes(extraArtist)
-            //         ? `${nextTitle} (feat. ${extraArtist})`
-            //         : nextTitle;
-            //     nextSong.textContent = `Ya viene: ${mainArtist} - ${nextSongName}`;
-            // } else {
-            //     nextSong.textContent = defaultTitle;
-            // }
         });
     }
 
@@ -186,9 +157,6 @@ document.addEventListener('DOMContentLoaded', function () {
             logo.classList.add('active');
         }
     }, 3000);
-
-    // setInterval(updateSongInfo, 30000);
-    // updateSongInfo();
 
     closeButton.addEventListener('click', () => {
         musicRequestCanvas.classList.remove('open');
