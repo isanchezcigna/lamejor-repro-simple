@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function playAudio() {
-        audio.src = 'https://azura.laurban.cl/listen/lamejor/media';
+        audio.src = 'https://play.radiolamejor.cl';
         audio.play().catch(error => console.error('Error al reproducir el audio:', error));
     }
 
